@@ -1,11 +1,10 @@
-#include <iostream> // Required for input/output operations (e.g., std::cout)
-#include <cmath>    // Required for mathematical functions like pow() and round()
-#include <vector>   // Required for std::vector, used in NPV calculation
-#include <iomanip>  // Required for output formatting (e.g., std::fixed, std::setprecision)
-#include <limits>   // Required for std::numeric_limits, used in IRR for precision
+#include <iostream> 
+#include <cmath>    
+#include <vector>   
+#include <iomanip>  
+#include <limits>   
 
-// Define a namespace to encapsulate financial functions,
-// preventing naming conflicts and organizing the code.
+
 namespace FinancialLibrary {
 
     /**
@@ -103,25 +102,7 @@ namespace FinancialLibrary {
         }
         return principal * annual_interest_rate * time_in_years;
     }
-
-    /**
-     * @brief Calculates compound interest.
-     *
-     * Compound interest is the interest on a loan or deposit calculated based on
-     * both the initial principal and the accumulated interest from previous periods.
-     *
-     * Formula: A = P * (1 + r/n)^(nt)
-     * Where A = amount, P = principal, r = annual interest rate,
-     * n = number of times interest is compounded per year, t = time in years.
-     * This function returns the total accumulated amount, not just the interest.
-     *
-     * @param principal The initial amount of money (principal).
-     * @param annual_interest_rate The annual interest rate (e.g., 0.05 for 5%).
-     * @param compounding_frequency The number of times interest is compounded per year (e.g., 1 for annually, 12 for monthly).
-     * @param time_in_years The time period in years.
-     * @return The total accumulated amount after compounding.
-     */
-    double calculateCompoundInterest(double principal, double annual_interest_rate, int compounding_frequency, double time_in_years) {
+ calculateCompoundInterest(double principal, double annual_interest_rate, int compounding_frequency, double time_in_years) {
         if (principal < 0 || annual_interest_rate < 0 || compounding_frequency <= 0 || time_in_years < 0) {
             std::cerr << "Error: Invalid input for Compound Interest calculation. Check principal, rate, frequency, and time.\n";
             return 0.0;
